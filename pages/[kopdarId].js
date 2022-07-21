@@ -32,7 +32,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
   // get data for single kopdar
   const kopdarId = ObjectId(context.params.kopdarId);
-  const client = await MongoClient.connect(""mongodb+srv://jagokode:sapigila@webdev.qoj9t.mongodb.net/kopdar?retryWrites=true&w=majority"");
+  const client = await MongoClient.connect("mongodb+srv://jagokode:sapigila@webdev.qoj9t.mongodb.net/kopdar?retryWrites=true&w=majority");
   const db = client.db();
   const kopdarCollection = db.collection("kopdar");
   const chosenKopdar = await kopdarCollection.findOne({ _id: kopdarId });
