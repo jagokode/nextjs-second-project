@@ -10,7 +10,7 @@ const handleTambahKopdar = async (req, res) => {
     //   "mongodb://localhost:27017/kopdar"
     // );
     const client = await MongoClient.connect(
-      "mongodb+srv://jagokode:sapigila@webdev.qoj9t.mongodb.net/kopdar?retryWrites=true&w=majority"
+      "mongodb+srv://<>:<>@webdev.qoj9t.mongodb.net/kopdar?retryWrites=true&w=majority"
     );
 
     const db = client.db();
