@@ -1,5 +1,5 @@
 // kopdar.com/
-
+import { Fragment } from 'react'
 import Head from "next/head";
 import { MongoClient } from "mongodb";
 import KopdarList from "../components/kopdar/KopdarList";
@@ -69,7 +69,7 @@ export const getStaticProps = async () => {
 
 const Home = (props) => {
   return (
-    <>
+    <Fragment>
       <Head>
         <title>Kopdar</title>
         <meta
@@ -78,7 +78,7 @@ const Home = (props) => {
         />
       </Head>
       <KopdarList kopdars={props.kopdars} />
-    </>
+    </Fragment>
   );
 };
 
