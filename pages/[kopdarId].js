@@ -9,7 +9,10 @@ import KopdarDetail from "../components/kopdar/KopdarDetail";
 // the job of returning an object where we describe all the dynamic segment values including the ID for which this page should be generated.
 export const getStaticPaths = async () => {
   // fetch id for single kopdar url
-  const client = await MongoClient.connect("mongodb://localhost:27017/kopdar");
+  // const client = await MongoClient.connect("mongodb://localhost:27017/kopdar");
+  const client = await MongoClient.connect(
+    "mongodb+srv://jagokode:sapigila@webdev.qoj9t.mongodb.net/kopdar?retryWrites=true&w=majority"
+  );
   const db = client.db();
   const kopdarCollection = db.collection("kopdar");
   const kopdars = await kopdarCollection.find({}, { _id: 1 }).toArray();

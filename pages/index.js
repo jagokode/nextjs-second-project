@@ -43,7 +43,10 @@ import KopdarList from "../components/kopdar/KopdarList";
 // this function run always on the server at build before deployment
 export const getStaticProps = async () => {
   // fetch data from an API
-  const client = await MongoClient.connect("mongodb://localhost:27017/kopdar");
+  // const client = await MongoClient.connect("mongodb://localhost:27017/kopdar");
+  const client = await MongoClient.connect(
+    "mongodb+srv://jagokode:sapigila@webdev.qoj9t.mongodb.net/kopdar?retryWrites=true&w=majority"
+  );
   const db = client.db();
   const kopdarCollection = db.collection("kopdar");
   const kopdars = await kopdarCollection.find().toArray();
