@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import { MongoClient, ObjectId } from "mongodb";
 import Head from "next/head";
 
@@ -53,7 +54,7 @@ export const getStaticProps = async (context) => {
 
 const SingleKopdar = (props) => {
   return (
-    <>
+    <Fragment>
       <Head>
         <title>{props.kopdarInfo.title}</title>
         <meta name="description" content={props.kopdarInfo.description} />
@@ -64,7 +65,7 @@ const SingleKopdar = (props) => {
         image={props.kopdarInfo.image}
         description={props.kopdarInfo.description}
       />
-    </>
+    </Fragment>
   );
 };
 
