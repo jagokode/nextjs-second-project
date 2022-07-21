@@ -24,7 +24,7 @@ export const getStaticPaths = async () => {
         kopdarId: kopdar._id.toString(),
       },
     })),
-    fallback: false,
+    fallback: "blocking",
   };
 };
 
