@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import { Image } from "next/image";
 import KopdarCard from "../ui/KopdarCard";
 import styles from "./KopdarItem.module.css";
 
@@ -11,7 +12,7 @@ const KopdarItem = ({ id, title, image, address }) => {
     <li className={styles.item}>
       <KopdarCard>
         <div className={styles.image}>
-          <img src={image} alt={title} />
+          <Image src={image} alt={title} />
         </div>
         <div className={styles.content}>
           <h3>{title}</h3>
